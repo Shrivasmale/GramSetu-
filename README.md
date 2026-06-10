@@ -1,4 +1,10 @@
-# GramSetu – Smart Rural Service Kiosk
+# GramSetu
+
+Live Demo: https://gramsetu.vercel.app
+
+## Features
+- Feature 1
+- Feature 2# GramSetu – Smart Rural Service Kiosk
 
 ![GramSetu Banner](./public/banner.png)
 
