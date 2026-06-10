@@ -10,12 +10,13 @@ export const translations = {
       requestDemo: "Request Demo"
     },
     logo: {
-      word1: "GRAM",
-      word2: "SETU",
-      tagline: "One Touch. Endless Opportunities."
+      brand: "GRAMSETU",
+      tagline: "Where Every Touch Creates Opportunity"
     },
     hero: {
-      headline: "Empowering Every Village Through Digital Access",
+      headlinePre: "Empowering Every Village Through ",
+      headlineHighlight: "Digital Access",
+      headlinePost: "",
       subheadline: "Access government services, healthcare, jobs, education, agriculture support, and emergency assistance through one smart multilingual touchscreen kiosk.",
       requestDemo: "Request Demo",
       exploreFeatures: "Explore Features",
@@ -191,12 +192,13 @@ export const translations = {
       requestDemo: "डेमो का अनुरोध"
     },
     logo: {
-      word1: "ग्राम",
-      word2: "सेतु",
-      tagline: "एक स्पर्श। अनंत अवसर।"
+      brand: "ग्रामसेतु",
+      tagline: "जहां हर स्पर्श अवसर बनाता है"
     },
     hero: {
-      headline: "डिजिटल पहुंच के माध्यम से हर गांव का सशक्तिकरण",
+      headlinePre: "",
+      headlineHighlight: "डिजिटल पहुंच",
+      headlinePost: " के माध्यम से हर गांव का सशक्तिकरण",
       subheadline: "एक ही स्मार्ट बहुभाषी टचस्क्रीन कियोस्क के माध्यम से सरकारी योजनाओं, स्वास्थ्य सेवा, नौकरियों, शिक्षा, कृषि सहायता और आपातकालीन सहायता का लाभ उठाएं।",
       requestDemo: "डेमो का अनुरोध करें",
       exploreFeatures: "सुविधाएं खोजें",
@@ -371,12 +373,13 @@ export const translations = {
       requestDemo: "डेमोची विनंती"
     },
     logo: {
-      word1: "ग्राम",
-      word2: "सेतू",
-      tagline: "एक स्पर्श. अमर्याद संधी."
+      brand: "ग्रामसेतू",
+      tagline: "जिथे प्रत्येक स्पर्श संधी निर्माण करतो"
     },
     hero: {
-      headline: "डिजिटल प्रवेशाद्वारे प्रत्येक गावाचे सक्षमीकरण",
+      headlinePre: "",
+      headlineHighlight: "डिजिटल प्रवेशाद्वारे",
+      headlinePost: " प्रत्येक गावाचे सक्षमीकरण",
       subheadline: "एकाच स्मार्ट बहुभाषी टचस्क्रीन कियोस्कद्वारे शासकीय योजना, आरोग्य सेवा, नोकऱ्या, शिक्षण, कृषी सहाय्य आणि आणीबाणीच्या मदतीचा लाभ घ्या.",
       requestDemo: "डेमोची विनंती करा",
       exploreFeatures: "वैशिष्ट्ये एक्सप्लोर करा",

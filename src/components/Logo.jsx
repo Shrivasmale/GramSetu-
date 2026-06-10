@@ -86,9 +86,9 @@ export const Logo = ({
     >
       <defs>
         <linearGradient id="logo-bridge-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#1E40AF" />   {/* Start: Blue */}
-          <stop offset="50%" stopColor="#16A34A" />  {/* Middle: Green */}
-          <stop offset="100%" stopColor="#F97316" /> {/* End: Orange */}
+          <stop offset="0%" stopColor="#2563EB" />   {/* Start: Blue */}
+          <stop offset="50%" stopColor="#22C55E" />  {/* Middle: Green */}
+          <stop offset="100%" stopColor="#FB923C" /> {/* End: Orange */}
         </linearGradient>
       </defs>
 
@@ -172,7 +172,7 @@ export const Logo = ({
         cx="20"
         cy="80"
         r="6"
-        fill="#1E40AF"
+        fill="#2563EB"
         stroke="white"
         strokeWidth="2.5"
         variants={nodeVariants(0.6)}
@@ -183,7 +183,7 @@ export const Logo = ({
         cx="100"
         cy="80"
         r="6"
-        fill="#F97316"
+        fill="#FB923C"
         stroke="white"
         strokeWidth="2.5"
         variants={nodeVariants(0.75)}
@@ -194,7 +194,7 @@ export const Logo = ({
         cx="60"
         cy="25"
         r="7.5"
-        fill="#16A34A"
+        fill="#22C55E"
         stroke="white"
         strokeWidth="2.5"
         variants={nodeVariants(0.5)}
@@ -237,15 +237,12 @@ export const Logo = ({
           animate="visible"
           className="flex flex-col items-center"
         >
-          {/* Stacked Wordmark: GRAM and SETU */}
+          {/* Brand Wordmark: GRAMSETU */}
           <motion.div 
             variants={textItemVariants}
-            className={`font-sora font-extrabold ${currentSize.text} leading-[0.95] tracking-[0.15em] ${textColor || 'text-slate-800 dark:text-white'} flex flex-col items-center select-none`}
+            className={`font-logo font-extrabold ${currentSize.text} tracking-[0.05em] select-none text-transparent bg-clip-text bg-gradient-to-r from-[#2563EB] via-[#22C55E] to-[#FB923C]`}
           >
-            <span>{t('logo.word1')}</span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brandBlue to-brandOrange">
-              {t('logo.word2')}
-            </span>
+            {t('logo.brand')}
           </motion.div>
 
           {/* Subtitle tagline */}
@@ -273,13 +270,12 @@ export const Logo = ({
         animate="visible"
         className="flex flex-col leading-none"
       >
-        {/* Inline wordmark GramSetu */}
+        {/* Inline wordmark GRAMSETU */}
         <motion.h3
           variants={textItemVariants}
-          className={`${currentSize.text} tracking-tight ${textColor || 'text-slate-900 dark:text-white'} transition-colors duration-200`}
+          className={`${currentSize.text} tracking-tight select-none transition-colors duration-200`}
         >
-          <span className="font-logo font-extrabold">{t('logo.word1')}</span>
-          <span className="font-logo font-extrabold text-brandOrange-light">{t('logo.word2')}</span>
+          <span className="font-logo font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#2563EB] via-[#22C55E] to-[#FB923C]">{t('logo.brand')}</span>
         </motion.h3>
 
         {/* Small tagline beneath */}
