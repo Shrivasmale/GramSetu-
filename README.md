@@ -1,6 +1,6 @@
 # GramSetu
 
-Live Demo: https://gramsetu.vercel.app
+Live Demo: https://gram-setu-teal.vercel.app/
 
 ## Features
 - Feature 1
