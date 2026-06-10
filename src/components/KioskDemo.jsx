@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { kioskData } from '../data/kioskData';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Logo } from './Logo';
 import { 
   MdSettingsVoice, MdCompare, MdFormatSize, MdHome, 
   MdArrowBack, MdFingerprint, MdCheckCircle, MdPhone, MdLocationOn
@@ -489,11 +490,9 @@ export const KioskDemo = () => {
                         exit={{ opacity: 0, y: -15 }}
                         className="w-full flex flex-col items-center justify-center py-2 sm:py-4 space-y-4 sm:space-y-6"
                       >
-                        <div className="text-center space-y-1">
-                          <h4 className={`font-extrabold font-manrope ${getTextSizeClass('title')} ${highContrast ? 'text-yellow-400' : 'text-slate-100'}`}>
-                            {t('kiosk.welcome')}
-                          </h4>
-                          <p className={`text-slate-400 font-medium ${getTextSizeClass('desc')}`}>
+                        <div className="text-center flex flex-col items-center space-y-3.5">
+                          <Logo layout="vertical" size="sm" textColor="text-white" taglineColor="text-slate-400" />
+                          <p className={`text-slate-400 font-bold border-t border-slate-800/80 pt-2.5 w-full max-w-[200px] ${getTextSizeClass('desc')}`}>
                             {t('kiosk.selectProfile')}
                           </p>
                         </div>

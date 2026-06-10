@@ -9,6 +9,11 @@ export const translations = {
       contact: "Contact",
       requestDemo: "Request Demo"
     },
+    logo: {
+      word1: "GRAM",
+      word2: "SETU",
+      tagline: "One Touch. Endless Opportunities."
+    },
     hero: {
       headline: "Empowering Every Village Through Digital Access",
       subheadline: "Access government services, healthcare, jobs, education, agriculture support, and emergency assistance through one smart multilingual touchscreen kiosk.",
@@ -185,6 +190,11 @@ export const translations = {
       contact: "संपर्क",
       requestDemo: "डेमो का अनुरोध"
     },
+    logo: {
+      word1: "ग्राम",
+      word2: "सेतु",
+      tagline: "एक स्पर्श। अनंत अवसर।"
+    },
     hero: {
       headline: "डिजिटल पहुंच के माध्यम से हर गांव का सशक्तिकरण",
       subheadline: "एक ही स्मार्ट बहुभाषी टचस्क्रीन कियोस्क के माध्यम से सरकारी योजनाओं, स्वास्थ्य सेवा, नौकरियों, शिक्षा, कृषि सहायता और आपातकालीन सहायता का लाभ उठाएं।",
@@ -359,6 +369,11 @@ export const translations = {
       accessibility: "सुलभता",
       contact: "संपर्क",
       requestDemo: "डेमोची विनंती"
+    },
+    logo: {
+      word1: "ग्राम",
+      word2: "सेतू",
+      tagline: "एक स्पर्श. अमर्याद संधी."
     },
     hero: {
       headline: "डिजिटल प्रवेशाद्वारे प्रत्येक गावाचे सक्षमीकरण",
