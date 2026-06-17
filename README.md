@@ -271,7 +271,7 @@ The objective was to create a modern, responsive, and interactive landing page d
 
 Frontend Developer | React Enthusiast | Aspiring DevOps Engineer
 
-GitHub: https://github.com/YOUR_USERNAME
+GitHub: https://github.com/Shrivasmale
 
 LinkedIn: YOUR_LINKEDIN_URL
 
