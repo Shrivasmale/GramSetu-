@@ -53,28 +53,28 @@ export const ImpactStats = () => {
       icon: <FaGlobe className="text-3xl text-brandBlue dark:text-brandBlue-light" />,
       target: t('stats.s1.num'),
       label: t('stats.s1.label'),
-      bgClass: 'bg-blue-50/50 dark:bg-blue-950/20 border-blue-100 dark:border-blue-900/30'
+      bgClass: 'bg-blue-50/70 dark:bg-blue-950/20 border-blue-200/80 dark:border-blue-900/40'
     },
     {
       key: 's2',
       icon: <FaPeopleGroup className="text-3xl text-brandGreen dark:text-brandGreen-light" />,
       target: t('stats.s2.num'),
       label: t('stats.s2.label'),
-      bgClass: 'bg-emerald-50/50 dark:bg-emerald-950/20 border-emerald-100 dark:border-emerald-900/30'
+      bgClass: 'bg-emerald-50/70 dark:bg-emerald-950/20 border-emerald-200/80 dark:border-emerald-900/40'
     },
     {
       key: 's3',
       icon: <FaHandHoldingHeart className="text-3xl text-brandOrange dark:text-brandOrange-light" />,
       target: t('stats.s3.num'),
       label: t('stats.s3.label'),
-      bgClass: 'bg-orange-50/50 dark:bg-orange-950/20 border-orange-100 dark:border-orange-900/30'
+      bgClass: 'bg-orange-50/70 dark:bg-orange-950/20 border-orange-200/80 dark:border-orange-900/40'
     },
     {
       key: 's4',
       icon: <FaHourglassHalf className="text-3xl text-purple-600 dark:text-purple-400" />,
       target: t('stats.s4.num'),
       label: t('stats.s4.label'),
-      bgClass: 'bg-purple-50/50 dark:bg-purple-950/20 border-purple-100 dark:border-purple-900/30'
+      bgClass: 'bg-purple-50/70 dark:bg-purple-950/20 border-purple-200/80 dark:border-purple-900/40'
     }
   ];
 
@@ -93,15 +93,15 @@ export const ImpactStats = () => {
   };
 
   return (
-    <section className="py-20 bg-white dark:bg-slate-950 relative border-b border-slate-100 dark:border-slate-850 transition-colors duration-300">
+    <section className="py-20 bg-white dark:bg-slate-950 relative border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl sm:text-4xl font-extrabold font-manrope text-slate-800 dark:text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight">
             {t('stats.title')}
           </h2>
-          <p className="mt-4 text-lg text-slate-650 dark:text-slate-350 font-sans leading-relaxed">
+          <p className="mt-4 text-lg text-slate-700 dark:text-slate-300 font-sans leading-relaxed font-normal">
             {t('stats.subtitle')}
           </p>
         </div>
@@ -120,13 +120,13 @@ export const ImpactStats = () => {
               variants={itemVariants}
               className={`rounded-3xl border p-6 flex flex-col items-center justify-center text-center shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ${stat.bgClass}`}
             >
-              <div className="p-4 bg-white dark:bg-slate-900 rounded-2xl shadow-inner mb-4">
+              <div className="p-4 bg-white dark:bg-slate-900 rounded-2xl shadow-inner mb-4 border border-slate-100 dark:border-slate-800">
                 {stat.icon}
               </div>
-              <p className="text-3xl sm:text-4xl font-black font-manrope text-slate-800 dark:text-white tracking-tight">
+              <p className="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight">
                 <AnimatedCounter targetValue={stat.target} />
               </p>
-              <p className="mt-2 text-xs sm:text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wide">
+              <p className="mt-2 text-xs sm:text-sm font-extrabold text-slate-800 dark:text-slate-200 uppercase tracking-wider">
                 {stat.label}
               </p>
             </motion.div>

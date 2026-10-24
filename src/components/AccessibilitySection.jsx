@@ -1,4 +1,3 @@
-import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { motion } from 'framer-motion';
 import { MdSettingsVoice, MdTouchApp, MdElderly, MdCompare } from 'react-icons/md';
@@ -55,26 +54,26 @@ export const AccessibilitySection = () => {
         {/* Header Block */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-6">
           <div className="max-w-3xl text-left">
-            <div className="inline-flex items-center space-x-2 bg-emerald-50 dark:bg-emerald-950/50 text-brandGreen dark:text-brandGreen-light px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider mb-3 border border-emerald-100/50 dark:border-emerald-900/40">
+            <div className="inline-flex items-center space-x-2 bg-emerald-50 dark:bg-emerald-950/60 text-emerald-900 dark:text-emerald-200 px-4 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-wider mb-3 border border-emerald-300 dark:border-emerald-800">
               <FaUniversalAccess className="text-sm" />
               <span>Inclusive Design Standards</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold font-manrope text-slate-800 dark:text-white tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight">
               {t('accessibility.title')}
             </h2>
-            <p className="mt-4 text-lg text-slate-650 dark:text-slate-350 font-sans leading-relaxed">
+            <p className="mt-4 text-lg text-slate-800 dark:text-slate-200 font-sans leading-relaxed font-normal">
               {t('accessibility.subtitle')}
             </p>
           </div>
           
           <div className="flex-shrink-0 flex space-x-4">
-            <div className="px-4 py-2 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center space-x-2">
+            <div className="px-4 py-2 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xs flex items-center space-x-2">
               <span className="w-2.5 h-2.5 rounded-full bg-brandBlue" />
-              <span className="text-xs font-bold text-slate-600 dark:text-slate-300">Aadhaar Enabled</span>
+              <span className="text-xs font-bold text-slate-900 dark:text-slate-100">Aadhaar Enabled</span>
             </div>
-            <div className="px-4 py-2 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center space-x-2">
+            <div className="px-4 py-2 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xs flex items-center space-x-2">
               <span className="w-2.5 h-2.5 rounded-full bg-brandGreen" />
-              <span className="text-xs font-bold text-slate-600 dark:text-slate-300">MHA Compliant</span>
+              <span className="text-xs font-bold text-slate-900 dark:text-slate-100">MHA Compliant</span>
             </div>
           </div>
         </div>
@@ -91,16 +90,16 @@ export const AccessibilitySection = () => {
             <motion.div
               key={feat.key}
               variants={itemVariants}
-              className="bg-white dark:bg-slate-900 rounded-[2rem] p-8 shadow-xl border border-slate-100 dark:border-slate-800/80 hover:shadow-2xl dark:hover:shadow-black/30 transition-all duration-300 flex items-start space-x-6"
+              className="bg-white dark:bg-slate-900 rounded-[2rem] p-8 shadow-lg hover:shadow-xl border border-slate-200 dark:border-slate-800 transition-all duration-300 flex items-start space-x-6"
             >
-              <div className="p-4 bg-slate-50 dark:bg-slate-950/50 rounded-2xl flex-shrink-0 shadow-inner">
+              <div className="p-4 bg-slate-50 dark:bg-slate-950/60 rounded-2xl flex-shrink-0 shadow-inner border border-slate-150 dark:border-slate-800">
                 {feat.icon}
               </div>
               <div className="text-left space-y-2">
-                <h3 className="text-xl font-bold font-manrope text-slate-800 dark:text-white">
+                <h3 className="text-xl font-extrabold font-heading text-slate-900 dark:text-white">
                   {feat.title}
                 </h3>
-                <p className="text-sm font-medium text-slate-550 dark:text-slate-400 leading-relaxed">
+                <p className="text-sm font-medium text-slate-800 dark:text-slate-200 leading-relaxed">
                   {feat.desc}
                 </p>
               </div>
@@ -109,16 +108,16 @@ export const AccessibilitySection = () => {
         </motion.div>
 
         {/* Interactive Info Board */}
-        <div className="mt-12 p-6 rounded-3xl bg-brandBlue/5 dark:bg-brandBlue/10 border border-brandBlue/10 dark:border-brandBlue/20 text-brandBlue dark:text-brandBlue-light flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="mt-12 p-6 rounded-3xl bg-blue-50 dark:bg-blue-950/50 border border-blue-200 dark:border-blue-900/60 text-blue-950 dark:text-blue-100 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center space-x-3 text-left">
             <span className="text-2xl">💡</span>
-            <p className="text-sm font-semibold text-brandBlue-dark dark:text-blue-105">
-              <strong>Deep UX Insight:</strong> Physical kiosks undergo heavy glare and micro-scratches over time. GramSetu's high-contrast theme and 48px touch bounding boxes preserve operations even on worn screens.
+            <p className="text-sm font-medium leading-relaxed">
+              <strong className="font-bold text-blue-950 dark:text-white">Deep UX Insight:</strong> Physical kiosks undergo heavy glare and micro-scratches over time. GramSetu's high-contrast theme and 48px touch bounding boxes preserve operations even on worn screens.
             </p>
           </div>
           <a
             href="#kiosk-demo"
-            className="flex-shrink-0 px-6 py-3 rounded-xl bg-brandBlue hover:bg-brandBlue-dark text-white font-bold text-sm shadow-md transition-colors"
+            className="flex-shrink-0 px-6 py-3 rounded-xl bg-brandBlue hover:bg-brandBlue-dark text-white font-extrabold text-sm shadow-md transition-colors"
           >
             Test Kiosk Accessibility Below
           </a>

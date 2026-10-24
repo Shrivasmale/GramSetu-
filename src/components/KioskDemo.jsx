@@ -369,7 +369,7 @@ export const KioskDemo = () => {
                   
                   {/* Persona Indicator Banner */}
                   {activePersona && (
-                    <span className="px-2.5 py-0.5 rounded-full bg-slate-850 text-[9px] sm:text-[10px] text-slate-350 font-bold uppercase tracking-wider">
+                    <span className="px-2.5 py-0.5 rounded-full bg-slate-800 text-[9px] sm:text-[10px] text-slate-200 font-bold uppercase tracking-wider border border-slate-700">
                       {activeData.name} ({activeData.personaName})
                     </span>
                   )}
@@ -432,7 +432,7 @@ export const KioskDemo = () => {
                           <div className="flex justify-between gap-3">
                             <button
                               onClick={() => setCertStep(0)}
-                              className="w-1/2 py-2 rounded-xl border border-slate-700 hover:bg-slate-800 text-[10px] sm:text-xs font-bold"
+                              className="w-1/2 py-2 rounded-xl border border-slate-700 bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white text-[10px] sm:text-xs font-bold transition-colors"
                             >
                               Cancel
                             </button>
@@ -441,7 +441,7 @@ export const KioskDemo = () => {
                                 setCertStep(2);
                                 speakText("Verification successful. Printing receipt.");
                               }}
-                              className="w-1/2 py-2 bg-emerald-600 hover:bg-emerald-755 text-white rounded-xl text-[10px] sm:text-xs font-bold"
+                              className="w-1/2 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-[10px] sm:text-xs font-bold shadow-md transition-colors"
                             >
                               Skip Scan
                             </button>
@@ -463,10 +463,10 @@ export const KioskDemo = () => {
                             <h5 className="font-extrabold text-xs sm:text-sm font-manrope text-white mt-2">Setu Verification Approved</h5>
                             <p className="text-[10px] sm:text-xs text-slate-400">Application submitted to Nodal Officer.</p>
                           </div>
-                          <div className="bg-slate-950/60 p-3 sm:p-4 rounded-xl border border-slate-850/80 text-[10px] sm:text-xs font-mono space-y-1 text-left">
-                            <p className="text-slate-450"><strong className="text-slate-200">Ref:</strong> MH-SETU-98011</p>
-                            <p className="text-slate-455"><strong className="text-slate-200">Service:</strong> {selectedCertificate}</p>
-                            <p className="text-slate-455"><strong className="text-slate-200">Audit Status:</strong> Success / Printed</p>
+                          <div className="bg-slate-950/60 p-3 sm:p-4 rounded-xl border border-slate-800 text-[10px] sm:text-xs font-mono space-y-1 text-left">
+                            <p className="text-slate-300"><strong className="text-slate-100">Ref:</strong> MH-SETU-98011</p>
+                            <p className="text-slate-300"><strong className="text-slate-100">Service:</strong> {selectedCertificate}</p>
+                            <p className="text-slate-300"><strong className="text-slate-100">Audit Status:</strong> Success / Printed</p>
                           </div>
                           <button
                             onClick={() => setCertStep(0)}
@@ -554,9 +554,9 @@ export const KioskDemo = () => {
                                     <h5 className={`font-bold font-manrope leading-snug ${getTextSizeClass('desc')} ${highContrast ? 'text-yellow-400' : 'text-slate-100'} line-clamp-1`}>
                                       {act.title}
                                     </h5>
-                                    <p className="text-[8px] sm:text-[9px] text-slate-500 line-clamp-1 mt-0.5">{act.desc}</p>
+                                    <p className="text-[8px] sm:text-[9px] text-slate-350 line-clamp-1 mt-0.5">{act.desc}</p>
                                   </div>
-                                  <span className="text-[7px] sm:text-[8px] text-slate-600 font-bold uppercase tracking-wider block">Tap to open →</span>
+                                  <span className="text-[7px] sm:text-[8px] text-brandBlue-light font-extrabold uppercase tracking-wider block">Tap to open →</span>
                                 </button>
                               ))}
                             </div>
@@ -564,7 +564,7 @@ export const KioskDemo = () => {
                             {/* Change Profile button */}
                             <button
                               onClick={() => setActivePersona(null)}
-                              className="mt-4 flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-[10px] sm:text-xs text-slate-400 font-semibold hover:text-white transition-colors"
+                              className="mt-4 flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-[10px] sm:text-xs text-slate-200 font-bold hover:bg-slate-700 hover:text-white transition-colors"
                             >
                               <MdArrowBack />
                               <span>Change Profile</span>
@@ -583,7 +583,7 @@ export const KioskDemo = () => {
                                 </h4>
                                 <button
                                   onClick={handleBackClick}
-                                  className="flex items-center space-x-1 px-2.5 py-1 bg-slate-900 hover:bg-slate-800 border border-slate-800 rounded-lg text-[9px] sm:text-[10px] text-slate-300"
+                                  className="flex items-center space-x-1 px-2.5 py-1 bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded-lg text-[9px] sm:text-[10px] text-slate-100 font-bold transition-colors"
                                 >
                                   <MdArrowBack />
                                   <span>{t('kiosk.back')}</span>
@@ -637,7 +637,7 @@ export const KioskDemo = () => {
                                                 </button>
                                               )}
                                               {activeService === 'checkEligibility' && (
-                                                <span className="text-[8px] sm:text-[9px] font-bold text-emerald-450 bg-emerald-500/5 px-2 py-0.5 rounded border border-emerald-500/20">
+                                                <span className="text-[8px] sm:text-[9px] font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
                                                   {row.sub.split(" ")[0]}
                                                 </span>
                                               )}
@@ -826,10 +826,10 @@ export const KioskDemo = () => {
                                           setCertStep(1);
                                           speakText(`Initiated Caste/Income application for ${cert}`);
                                         }}
-                                        className="p-3.5 bg-slate-900 border border-slate-800 hover:border-brandOrange text-slate-200 hover:text-white rounded-xl text-xs font-bold text-left flex justify-between items-center"
+                                        className="p-3.5 bg-slate-900 border border-slate-750 hover:border-brandOrange text-white rounded-xl text-xs font-bold text-left flex justify-between items-center transition-colors"
                                       >
                                         <span className="truncate">{cert.split(" (")[0]}</span>
-                                        <span className="text-[9px] text-brandOrange-light font-bold">Apply →</span>
+                                        <span className="text-[9px] text-brandOrange-light font-extrabold">Apply →</span>
                                       </button>
                                     ))}
                                   </div>
@@ -843,7 +843,7 @@ export const KioskDemo = () => {
                                     <div key={idx} className="p-3 bg-slate-950/40 border border-white/5 rounded-xl flex items-center justify-between text-xs">
                                       <div className="text-left space-y-1">
                                         <p className="font-bold text-slate-200">{center.name}</p>
-                                        <p className="text-[10px] text-slate-450 flex items-center"><MdLocationOn className="mr-0.5" />{center.address}</p>
+                                        <p className="text-[10px] text-slate-400 flex items-center"><MdLocationOn className="mr-0.5" />{center.address}</p>
                                       </div>
                                       <button
                                         onClick={() => speakText(`Setu center coordinates sent to mobile number.`)}
@@ -946,7 +946,7 @@ export const KioskDemo = () => {
                                         }}
                                         className={`px-3 py-1 rounded text-[9px] sm:text-[10px] font-bold ${
                                           appliedTrainings[course.title] 
-                                            ? 'bg-emerald-500/20 text-emerald-450 border border-emerald-500/30' 
+                                            ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' 
                                             : 'bg-brandGreen text-white hover:bg-brandGreen-dark'
                                         }`}
                                       >
@@ -974,7 +974,7 @@ export const KioskDemo = () => {
                                         }}
                                         className={`px-3 py-1 rounded text-[9px] sm:text-[10px] font-bold ${
                                           appliedTrainings[course.title] 
-                                            ? 'bg-emerald-500/20 text-emerald-450 border border-emerald-500/30' 
+                                            ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' 
                                             : 'bg-brandGreen text-white hover:bg-brandGreen-dark'
                                         }`}
                                       >
@@ -1020,10 +1020,10 @@ export const KioskDemo = () => {
                                           setCertStep(1);
                                           speakText(`Initiated enrollment check for ${svc}`);
                                         }}
-                                        className="p-3 bg-slate-900 border border-slate-800 hover:border-brandOrange text-slate-200 hover:text-white rounded-xl text-xs font-bold text-left flex justify-between items-center"
+                                        className="p-3 bg-slate-900 border border-slate-750 hover:border-brandOrange text-white rounded-xl text-xs font-bold text-left flex justify-between items-center transition-colors"
                                       >
                                         <span className="truncate">{svc.split(" (")[0]}</span>
-                                        <span className="text-[9px] text-brandOrange-light font-bold">Apply →</span>
+                                        <span className="text-[9px] text-brandOrange-light font-extrabold">Apply →</span>
                                       </button>
                                     ))}
                                   </div>
@@ -1052,7 +1052,7 @@ export const KioskDemo = () => {
                     {activePersona && (
                       <button 
                         onClick={handleBackClick} 
-                        className="text-slate-400 hover:text-white flex items-center space-x-0.5 font-bold uppercase"
+                        className="text-slate-200 hover:text-white flex items-center space-x-0.5 font-extrabold uppercase transition-colors"
                       >
                         <MdArrowBack />
                         <span>{t('kiosk.back')}</span>
@@ -1060,7 +1060,7 @@ export const KioskDemo = () => {
                     )}
                     <button 
                       onClick={handleHomeClick} 
-                      className="text-slate-400 hover:text-white flex items-center space-x-0.5 font-bold uppercase"
+                      className="text-slate-200 hover:text-white flex items-center space-x-0.5 font-extrabold uppercase transition-colors"
                     >
                       <MdHome />
                       <span>{t('kiosk.home')}</span>
@@ -1074,7 +1074,7 @@ export const KioskDemo = () => {
               <div className="flex items-center justify-center mt-3 sm:mt-4">
                 <button
                   onClick={handleHomeClick}
-                  className="w-11 sm:w-14 h-11 sm:h-14 rounded-full bg-slate-900 border border-slate-700 flex items-center justify-center hover:bg-slate-750 transition-all hover:scale-105 active:scale-95 shadow-xl group"
+                  className="w-11 sm:w-14 h-11 sm:h-14 rounded-full bg-slate-900 border border-slate-700 flex items-center justify-center hover:bg-slate-800 transition-all hover:scale-105 active:scale-95 shadow-xl group"
                   aria-label="Physical Kiosk Home Button"
                 >
                   <div className="w-4 sm:w-5 h-4 sm:h-5 rounded border-2 border-slate-500 group-hover:border-slate-300 transition-colors" />
