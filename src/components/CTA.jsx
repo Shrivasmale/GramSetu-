@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaPaperPlane, FaCircleCheck } from 'react-icons/fa6';
@@ -35,15 +35,15 @@ export const CTA = () => {
           
           {/* Left Block: Info */}
           <div className="lg:col-span-6 space-y-6">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-manrope text-white tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-heading text-white tracking-tight leading-tight">
               {t('cta.title')}
             </h2>
-            <p className="text-base sm:text-lg text-blue-100 font-medium leading-relaxed font-sans">
+            <p className="text-base sm:text-lg text-blue-100 font-normal leading-relaxed font-sans">
               {t('cta.subtitle')}
             </p>
             
             {/* Quick benefits */}
-            <div className="space-y-3 pt-4 border-t border-white/10">
+            <div className="space-y-3 pt-4 border-t border-white/15">
               <div className="flex items-center space-x-3 text-xs sm:text-sm font-semibold">
                 <span className="flex-shrink-0 w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold">✓</span>
                 <span>Includes 12-Month Hardware Warranty & Support</span>
@@ -60,7 +60,7 @@ export const CTA = () => {
           </div>
 
           {/* Right Block: Request Form */}
-          <div className="lg:col-span-6 bg-white dark:bg-slate-900 rounded-[2.5rem] p-6 sm:p-8 text-slate-800 dark:text-slate-100 shadow-xl border border-slate-100/60 dark:border-slate-800/80 relative min-h-[360px] flex flex-col justify-center transition-colors">
+          <div className="lg:col-span-6 bg-white dark:bg-slate-900 rounded-[2.5rem] p-6 sm:p-8 text-slate-900 dark:text-slate-100 shadow-xl border border-slate-200 dark:border-slate-800 relative min-h-[360px] flex flex-col justify-center transition-colors">
             <AnimatePresence mode="wait">
               {!isSubmitted ? (
                 <motion.form
@@ -71,12 +71,12 @@ export const CTA = () => {
                   onSubmit={handleSubmit}
                   className="space-y-4"
                 >
-                  <h3 className="text-xl font-bold font-manrope text-slate-850 dark:text-white mb-2">
+                  <h3 className="text-xl font-extrabold font-heading text-slate-900 dark:text-white mb-2">
                     {t('cta.requestDemo')}
                   </h3>
                   
                   <div className="space-y-1 text-left">
-                    <label htmlFor="cta-name" className="text-[10px] uppercase font-bold text-slate-400 dark:text-slate-500 tracking-wider">Name / Organization</label>
+                    <label htmlFor="cta-name" className="text-[10px] uppercase font-bold text-slate-600 dark:text-slate-400 tracking-wider">Name / Organization</label>
                     <input
                       id="cta-name"
                       type="text"
@@ -84,13 +84,13 @@ export const CTA = () => {
                       placeholder={t('cta.placeholderName')}
                       value={formData.name}
                       onChange={(e) => setFormData({...formData, name: e.target.value})}
-                      className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-3 text-sm font-semibold text-slate-700 dark:text-slate-200 placeholder:text-slate-450 dark:placeholder:text-slate-600 focus:outline-none focus:border-brandBlue focus:bg-white dark:focus:bg-slate-900 transition-all animate-in duration-200"
+                      className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl p-3 text-sm font-semibold text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:border-brandBlue focus:bg-white dark:focus:bg-slate-900 transition-all"
                     />
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-1 text-left">
-                      <label htmlFor="cta-email" className="text-[10px] uppercase font-bold text-slate-400 dark:text-slate-500 tracking-wider">Email Address</label>
+                      <label htmlFor="cta-email" className="text-[10px] uppercase font-bold text-slate-600 dark:text-slate-400 tracking-wider">Email Address</label>
                       <input
                         id="cta-email"
                         type="email"
@@ -98,11 +98,11 @@ export const CTA = () => {
                         placeholder={t('cta.placeholderEmail')}
                         value={formData.email}
                         onChange={(e) => setFormData({...formData, email: e.target.value})}
-                        className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-3 text-sm font-semibold text-slate-700 dark:text-slate-200 placeholder:text-slate-450 dark:placeholder:text-slate-600 focus:outline-none focus:border-brandBlue focus:bg-white dark:focus:bg-slate-900 transition-all animate-in duration-200"
+                        className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl p-3 text-sm font-semibold text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:border-brandBlue focus:bg-white dark:focus:bg-slate-900 transition-all"
                       />
                     </div>
                     <div className="space-y-1 text-left">
-                      <label htmlFor="cta-phone" className="text-[10px] uppercase font-bold text-slate-400 dark:text-slate-500 tracking-wider">Phone Number</label>
+                      <label htmlFor="cta-phone" className="text-[10px] uppercase font-bold text-slate-600 dark:text-slate-400 tracking-wider">Phone Number</label>
                       <input
                         id="cta-phone"
                         type="tel"
@@ -110,7 +110,7 @@ export const CTA = () => {
                         placeholder={t('cta.placeholderPhone')}
                         value={formData.phone}
                         onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                        className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl p-3 text-sm font-semibold text-slate-700 dark:text-slate-200 placeholder:text-slate-455 dark:placeholder:text-slate-600 focus:outline-none focus:border-brandBlue focus:bg-white dark:focus:bg-slate-900 transition-all animate-in duration-200"
+                        className="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl p-3 text-sm font-semibold text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:border-brandBlue focus:bg-white dark:focus:bg-slate-900 transition-all"
                       />
                     </div>
                   </div>
@@ -118,7 +118,7 @@ export const CTA = () => {
                   <button
                     type="submit"
                     disabled={isLoading}
-                    className="w-full mt-4 py-4 rounded-xl bg-brandBlue hover:bg-brandBlue-dark text-white font-bold shadow-lg shadow-brandBlue/10 hover:shadow-brandBlue/35 transition-all flex items-center justify-center space-x-2"
+                    className="w-full mt-4 py-4 rounded-xl bg-brandBlue hover:bg-brandBlue-dark text-white font-extrabold shadow-lg shadow-brandBlue/15 hover:shadow-brandBlue/35 transition-all flex items-center justify-center space-x-2"
                   >
                     {isLoading ? (
                       <span className="w-5 h-5 rounded-full border-2 border-white/30 border-t-white animate-spin" />
@@ -139,15 +139,15 @@ export const CTA = () => {
                   className="flex flex-col items-center justify-center text-center space-y-4 py-8"
                 >
                   <FaCircleCheck className="text-6xl text-emerald-500 animate-bounce" />
-                  <h3 className="text-2xl font-bold font-manrope text-slate-800 dark:text-white">
+                  <h3 className="text-2xl font-extrabold font-heading text-slate-900 dark:text-white">
                     Request Received!
                   </h3>
-                  <p className="text-sm font-medium text-slate-500 dark:text-slate-450 leading-relaxed max-w-sm font-sans">
+                  <p className="text-sm font-normal text-slate-700 dark:text-slate-300 leading-relaxed max-w-sm font-sans">
                     {t('cta.successMsg')}
                   </p>
                   <button
                     onClick={() => setIsSubmitted(false)}
-                    className="mt-4 px-6 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 text-xs font-bold text-slate-600 dark:text-slate-400 transition-colors"
+                    className="mt-4 px-6 py-2.5 rounded-xl border-2 border-slate-300 dark:border-slate-700 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-xs font-extrabold text-slate-900 dark:text-slate-100 transition-colors shadow-xs"
                   >
                     Submit Another Request
                   </button>

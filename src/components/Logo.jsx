@@ -281,7 +281,7 @@ export const Logo = ({
         {/* Small tagline beneath */}
         <motion.p
           variants={textItemVariants}
-          className={`font-sans font-medium ${taglineColor || 'text-slate-500 dark:text-slate-450'} tracking-wide transition-colors duration-200 ${currentSize.tagline}`}
+          className={`font-sans font-medium ${taglineColor || 'text-slate-600 dark:text-slate-300'} tracking-wide transition-colors duration-200 ${currentSize.tagline}`}
         >
           {t('logo.tagline')}
         </motion.p>

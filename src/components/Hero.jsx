@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
@@ -14,12 +14,12 @@ export const Hero = () => {
 
   const personas = ['farmer', 'student', 'citizen', 'jobSeeker', 'womanEnt', 'seniorCitizen'];
   const personaColors = {
-    farmer: { bg: 'bg-emerald-500/10', border: 'border-emerald-500/20', text: 'text-emerald-500', primary: 'bg-brandGreen' },
-    student: { bg: 'bg-blue-500/10', border: 'border-blue-500/20', text: 'text-brandBlue-light', primary: 'bg-brandBlue' },
-    citizen: { bg: 'bg-orange-500/10', border: 'border-orange-500/20', text: 'text-brandOrange-light', primary: 'bg-brandOrange' },
-    jobSeeker: { bg: 'bg-indigo-500/10', border: 'border-indigo-500/20', text: 'text-indigo-400', primary: 'bg-indigo-650' },
-    womanEnt: { bg: 'bg-rose-500/10', border: 'border-rose-500/20', text: 'text-rose-400', primary: 'bg-rose-600' },
-    seniorCitizen: { bg: 'bg-amber-500/10', border: 'border-amber-500/20', text: 'text-amber-450', primary: 'bg-amber-600' }
+    farmer: { bg: 'bg-emerald-500/20', border: 'border-emerald-500/40', text: 'text-emerald-400', primary: 'bg-brandGreen' },
+    student: { bg: 'bg-blue-500/20', border: 'border-blue-500/40', text: 'text-blue-300', primary: 'bg-brandBlue' },
+    citizen: { bg: 'bg-orange-500/20', border: 'border-orange-500/40', text: 'text-orange-300', primary: 'bg-brandOrange' },
+    jobSeeker: { bg: 'bg-indigo-500/20', border: 'border-indigo-500/40', text: 'text-indigo-300', primary: 'bg-indigo-600' },
+    womanEnt: { bg: 'bg-rose-500/20', border: 'border-rose-500/40', text: 'text-rose-300', primary: 'bg-rose-600' },
+    seniorCitizen: { bg: 'bg-amber-500/20', border: 'border-amber-500/40', text: 'text-amber-300', primary: 'bg-amber-600' }
   };
 
   useEffect(() => {
@@ -164,7 +164,7 @@ export const Hero = () => {
   const currentPreview = previewContent[currentLang] || previewContent['en'];
 
   return (
-    <section className="relative pt-28 pb-16 md:py-36 mesh-gradient-bg overflow-hidden border-b border-slate-100 dark:border-slate-850">
+    <section className="relative pt-28 pb-16 md:py-36 mesh-gradient-bg overflow-hidden border-b border-slate-200/80 dark:border-slate-800">
       {/* Ambient glowing circles */}
       <div className="absolute top-10 right-[-10%] w-[350px] sm:w-[500px] h-[350px] sm:h-[500px] rounded-full bg-brandBlue/5 blur-[120px] pointer-events-none" />
       <div className="absolute bottom-[-10%] left-[-15%] w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] rounded-full bg-brandGreen/5 blur-[150px] pointer-events-none" />
@@ -175,18 +175,18 @@ export const Hero = () => {
           {/* Left Side: Content */}
           <div className="lg:col-span-7 text-left space-y-6 sm:space-y-8">
             {/* Tag/Badge */}
-            <div className="inline-flex items-center space-x-2 bg-blue-50 dark:bg-blue-950/50 border border-blue-100/60 dark:border-blue-900/40 rounded-full px-3.5 py-1 sm:py-1.5 text-brandBlue dark:text-brandBlue-light text-xs sm:text-sm font-semibold tracking-wide shadow-sm">
+            <div className="inline-flex items-center space-x-2 bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-900/50 rounded-full px-4 py-1.5 text-blue-800 dark:text-blue-200 text-xs sm:text-sm font-extrabold tracking-wide shadow-xs">
               <span className="w-2 h-2 rounded-full bg-brandOrange animate-pulse" />
               <span>{t('hero.personas.' + activePersona)} {t('hero.previewing')}</span>
             </div>
 
             {/* Headline */}
-            <h1 className="text-3xl sm:text-5xl md:text-6xl font-black font-manrope text-slate-800 dark:text-white leading-[1.15] tracking-tight transition-colors duration-300">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold font-heading text-slate-900 dark:text-white leading-[1.12] tracking-tight transition-colors duration-300">
               {t('hero.headline')}
             </h1>
 
-            {/* Subheadline */}
-            <p className="text-base sm:text-lg md:text-xl text-slate-600 dark:text-slate-350 leading-relaxed font-sans max-w-2xl transition-colors duration-300">
+            {/* Subheadline - Grey-scoped for supreme visibility */}
+            <p className="text-base sm:text-lg md:text-xl text-slate-800 dark:text-slate-200 leading-relaxed font-sans max-w-2xl font-normal transition-colors duration-300">
               {t('hero.subheadline')}
             </p>
 
@@ -194,13 +194,13 @@ export const Hero = () => {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4">
               <a
                 href="#contact"
-                className="px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl bg-brandBlue hover:bg-brandBlue-dark text-white font-bold text-center shadow-lg shadow-brandBlue/20 hover:shadow-brandBlue/35 hover:-translate-y-0.5 transition-all duration-200"
+                className="px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl bg-brandBlue hover:bg-brandBlue-dark text-white font-extrabold text-center shadow-lg shadow-brandBlue/20 hover:shadow-brandBlue/35 hover:-translate-y-0.5 transition-all duration-200"
               >
                 {t('hero.requestDemo')}
               </a>
               <a
                 href="#features"
-                className="px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl border-2 border-slate-200 dark:border-slate-800 hover:border-brandBlue hover:bg-slate-50 dark:hover:bg-slate-900 text-slate-700 dark:text-slate-200 font-bold text-center flex items-center justify-center space-x-2 transition-all duration-200"
+                className="px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl bg-white dark:bg-slate-900 border-2 border-slate-300 dark:border-slate-700 hover:border-brandBlue hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-900 dark:text-white font-extrabold text-center flex items-center justify-center space-x-2 shadow-xs transition-all duration-200"
               >
                 <span>{t('hero.exploreFeatures')}</span>
                 <FaArrowRight className="text-sm" />
@@ -208,25 +208,25 @@ export const Hero = () => {
             </div>
 
             {/* Mini Trust Badges */}
-            <div className="pt-4 sm:pt-6 border-t border-slate-200/60 dark:border-slate-800 grid grid-cols-3 gap-4">
+            <div className="pt-5 sm:pt-6 border-t border-slate-200 dark:border-slate-800 grid grid-cols-3 gap-4">
               <div>
-                <p className="text-xl sm:text-2xl font-black font-manrope text-slate-800 dark:text-white">100%</p>
-                <p className="text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 font-semibold uppercase tracking-wider mt-1">Local Language</p>
+                <p className="text-xl sm:text-2xl font-extrabold font-heading text-slate-900 dark:text-white">100%</p>
+                <p className="text-[11px] sm:text-xs text-slate-800 dark:text-slate-200 font-bold uppercase tracking-wider mt-1">Local Language</p>
               </div>
               <div>
-                <p className="text-xl sm:text-2xl font-black font-manrope text-slate-800 dark:text-white">WCAG 2.1</p>
-                <p className="text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 font-semibold uppercase tracking-wider mt-1">Inclusivity Standard</p>
+                <p className="text-xl sm:text-2xl font-extrabold font-heading text-slate-900 dark:text-white">WCAG 2.1</p>
+                <p className="text-[11px] sm:text-xs text-slate-800 dark:text-slate-200 font-bold uppercase tracking-wider mt-1">Inclusivity Standard</p>
               </div>
               <div>
-                <p className="text-xl sm:text-2xl font-black font-manrope text-slate-800 dark:text-white">24/7</p>
-                <p className="text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 font-semibold uppercase tracking-wider mt-1">Availability</p>
+                <p className="text-xl sm:text-2xl font-extrabold font-heading text-slate-900 dark:text-white">24/7</p>
+                <p className="text-[11px] sm:text-xs text-slate-800 dark:text-slate-200 font-bold uppercase tracking-wider mt-1">Availability</p>
               </div>
             </div>
           </div>
 
           {/* Right Side: Interactive Kiosk Mockup Cabinet */}
           <div className="lg:col-span-5 flex justify-center w-full">
-            <div className="relative w-full max-w-[280px] xs:max-w-[320px] sm:max-w-[360px] md:max-w-[380px] bg-slate-900 rounded-[2.5rem] p-3.5 sm:p-4 shadow-2xl border-[5px] sm:border-[6px] border-slate-850 shadow-slate-900/40">
+            <div className="relative w-full max-w-[280px] xs:max-w-[320px] sm:max-w-[360px] md:max-w-[380px] bg-slate-900 rounded-[2.5rem] p-3.5 sm:p-4 shadow-2xl border-[5px] sm:border-[6px] border-slate-800 shadow-slate-900/40">
               
               {/* Camera & Speaker */}
               <div className="flex justify-center space-x-2 mb-2 sm:mb-3">
@@ -258,7 +258,7 @@ export const Hero = () => {
                   
                   {/* Persona Indicator */}
                   <div className="space-y-0.5 text-left">
-                    <p className="text-[8px] sm:text-[9px] uppercase font-bold tracking-wider text-slate-500">
+                    <p className="text-[8px] sm:text-[9px] uppercase font-bold tracking-wider text-slate-400">
                       {t('hero.persona')}
                     </p>
                     <div className="flex items-center justify-between">
@@ -268,7 +268,7 @@ export const Hero = () => {
                         </span>
                         <span className="line-clamp-1">{t('hero.personas.' + activePersona)}</span>
                       </h3>
-                      <span className="text-[8px] sm:text-[9px] text-slate-450 px-1.5 py-0.5 rounded bg-slate-800 font-bold uppercase tracking-wider">
+                      <span className="text-[8px] sm:text-[9px] text-slate-300 px-1.5 py-0.5 rounded bg-slate-800 font-bold uppercase tracking-wider">
                         Active
                       </span>
                     </div>
@@ -283,7 +283,7 @@ export const Hero = () => {
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.95, y: -10 }}
                         transition={{ duration: 0.4 }}
-                        className="w-full text-left bg-slate-900/85 border border-slate-800 rounded-xl sm:rounded-2xl p-3 sm:p-4 shadow-lg flex flex-col justify-between h-32 sm:h-40"
+                        className="w-full text-left bg-slate-900/90 border border-slate-800 rounded-xl sm:rounded-2xl p-3 sm:p-4 shadow-lg flex flex-col justify-between h-32 sm:h-40"
                       >
                         <div className="space-y-1.5 sm:space-y-2">
                           <div className={`h-1 w-10 sm:w-12 rounded-full ${activeColor.primary}`} />
@@ -293,19 +293,19 @@ export const Hero = () => {
                           </h4>
 
                           <div className="space-y-1 sm:space-y-1.5">
-                            <div className="flex items-center justify-between text-[9px] sm:text-[10px] text-slate-300 bg-slate-950/45 p-1.5 sm:p-2 rounded-lg border border-slate-800/40">
+                            <div className="flex items-center justify-between text-[9px] sm:text-[10px] text-slate-200 bg-slate-950/60 p-1.5 sm:p-2 rounded-lg border border-slate-800/60">
                               <span className="line-clamp-1">{currentPreview[activePersona].item1}</span>
-                              <FaChevronRight className="text-[6px] sm:text-[8px] text-slate-500" />
+                              <FaChevronRight className="text-[6px] sm:text-[8px] text-slate-400" />
                             </div>
-                            <div className="flex items-center justify-between text-[9px] sm:text-[10px] text-slate-300 bg-slate-950/45 p-1.5 sm:p-2 rounded-lg border border-slate-800/40">
+                            <div className="flex items-center justify-between text-[9px] sm:text-[10px] text-slate-200 bg-slate-950/60 p-1.5 sm:p-2 rounded-lg border border-slate-800/60">
                               <span className="line-clamp-1">{currentPreview[activePersona].item2}</span>
-                              <FaChevronRight className="text-[6px] sm:text-[8px] text-slate-500" />
+                              <FaChevronRight className="text-[6px] sm:text-[8px] text-slate-400" />
                             </div>
                           </div>
                         </div>
 
                         {/* Status bar */}
-                        <div className="flex items-center justify-between text-[8px] sm:text-[9px] text-slate-500 border-t border-slate-800/50 pt-1.5 sm:pt-2">
+                        <div className="flex items-center justify-between text-[8px] sm:text-[9px] text-slate-400 border-t border-slate-800/60 pt-1.5 sm:pt-2">
                           <div className="flex items-center space-x-0.5">
                             <MdLocationOn className="text-[9px] sm:text-[10px]" />
                             <span>Panchayat Center</span>
@@ -317,7 +317,7 @@ export const Hero = () => {
                   </div>
 
                   {/* Kiosk Bottom Nav Area - 6 Profiles */}
-                  <div className="grid grid-cols-6 gap-0.5 pt-1.5 sm:pt-2 border-t border-slate-900">
+                  <div className="grid grid-cols-6 gap-0.5 pt-1.5 sm:pt-2 border-t border-slate-850">
                     {personas.map((p, idx) => (
                       <button
                         key={p}
@@ -325,7 +325,7 @@ export const Hero = () => {
                         className={`flex flex-col items-center justify-center p-0.5 rounded transition-all ${
                           activePersona === p 
                             ? `${personaColors[p].bg} ${personaColors[p].border} ${personaColors[p].text} scale-102` 
-                            : 'border-transparent text-slate-650 hover:text-slate-400'
+                            : 'border-transparent text-slate-400 hover:text-slate-200'
                         }`}
                       >
                         <div className="text-[8px] sm:text-[10px]">{getPersonaIcon(p)}</div>
@@ -348,7 +348,7 @@ export const Hero = () => {
               <div className="flex justify-center mt-2.5 sm:mt-3">
                 <a
                   href="#kiosk-demo"
-                  className="w-9 sm:w-11 h-9 sm:h-11 rounded-full bg-slate-850 hover:bg-slate-750 border border-slate-750 flex items-center justify-center text-slate-400 transition-all hover:scale-105 shadow-md group"
+                  className="w-9 sm:w-11 h-9 sm:h-11 rounded-full bg-slate-800 hover:bg-slate-750 border border-slate-700 flex items-center justify-center text-slate-400 transition-all hover:scale-105 shadow-md group"
                   aria-label="Demo portal trigger"
                 >
                   <div className="w-3 sm:w-3.5 h-3 sm:h-3.5 rounded-sm border-2 border-slate-500 group-hover:border-slate-300" />

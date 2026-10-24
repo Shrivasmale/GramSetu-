@@ -1,4 +1,3 @@
-import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { motion } from 'framer-motion';
 import { 
@@ -16,7 +15,7 @@ export const FutureVision = () => {
       title: t('future.f1.title'),
       desc: t('future.f1.desc'),
       status: 'Pilot Stage',
-      statusColor: 'bg-emerald-50 dark:bg-emerald-950/30 text-emerald-600 dark:text-emerald-400 border-emerald-250 dark:border-emerald-900/40'
+      statusColor: 'bg-emerald-50 dark:bg-emerald-950/30 text-emerald-600 dark:text-emerald-400 border-emerald-300 dark:border-emerald-900/40'
     },
     {
       key: 'f2',
@@ -64,13 +63,13 @@ export const FutureVision = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center space-x-2 bg-indigo-50 dark:bg-indigo-950/50 text-indigo-600 dark:text-indigo-405 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider mb-3 border border-indigo-150/50 dark:border-indigo-900/40">
+          <div className="inline-flex items-center space-x-2 bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-3 border border-indigo-200/80 dark:border-indigo-900/50">
             Product Roadmap
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold font-manrope text-slate-800 dark:text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 dark:text-white tracking-tight">
             {t('future.title')}
           </h2>
-          <p className="mt-4 text-lg text-slate-655 dark:text-slate-350 font-sans leading-relaxed">
+          <p className="mt-4 text-lg text-slate-700 dark:text-slate-300 font-sans leading-relaxed font-normal">
             {t('future.subtitle')}
           </p>
         </div>
@@ -87,28 +86,28 @@ export const FutureVision = () => {
             <motion.div
               key={item.key}
               variants={itemVariants}
-              className="bg-white dark:bg-slate-900 rounded-[2rem] p-8 shadow-xl border border-slate-100 dark:border-slate-800/80 hover:shadow-2xl hover:border-brandBlue/20 dark:hover:border-brandBlue-light/30 transition-all duration-300 flex flex-col justify-between"
+              className="bg-white dark:bg-slate-900 rounded-[2rem] p-8 shadow-lg hover:shadow-xl border border-slate-200 dark:border-slate-800 hover:border-brandBlue/30 dark:hover:border-brandBlue-light/30 transition-all duration-300 flex flex-col justify-between"
             >
               <div>
                 {/* Header with status tag */}
                 <div className="flex items-center justify-between mb-5">
-                  <div className="p-3 bg-slate-50 dark:bg-slate-950/60 rounded-2xl shadow-inner text-slate-700 dark:text-slate-300">
+                  <div className="p-3 bg-slate-50 dark:bg-slate-950/60 rounded-2xl shadow-inner text-slate-800 dark:text-slate-200 border border-slate-100 dark:border-slate-800">
                     {item.icon}
                   </div>
-                  <span className={`text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full border ${item.statusColor}`}>
+                  <span className={`text-[10px] font-bold uppercase px-3 py-1 rounded-full border ${item.statusColor}`}>
                     {item.status}
                   </span>
                 </div>
 
-                <h3 className="text-xl font-bold font-manrope text-slate-800 dark:text-white mb-2">
+                <h3 className="text-xl font-extrabold font-heading text-slate-900 dark:text-white mb-2">
                   {item.title}
                 </h3>
-                <p className="text-sm font-medium text-slate-500 dark:text-slate-400 leading-relaxed text-left">
+                <p className="text-sm font-medium text-slate-800 dark:text-slate-200 leading-relaxed text-left">
                   {item.desc}
                 </p>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-slate-50 dark:border-slate-800 text-[10px] text-slate-400 dark:text-slate-500 font-bold uppercase tracking-wider text-left">
+              <div className="mt-6 pt-4 border-t border-slate-200 dark:border-slate-800 text-[10px] text-slate-700 dark:text-slate-300 font-extrabold uppercase tracking-wider text-left">
                 Milestone target: Q4 2026
               </div>
 
@@ -117,22 +116,22 @@ export const FutureVision = () => {
         </motion.div>
 
         {/* Dashboard Preview Box (Smart Analytics) */}
-        <div className="mt-12 bg-gradient-to-br from-slate-850 to-slate-950 border border-slate-750 dark:border-slate-800 rounded-[2.5rem] p-8 text-white relative overflow-hidden">
+        <div className="mt-12 bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-800 rounded-[2.5rem] p-8 sm:p-10 text-white relative overflow-hidden shadow-2xl">
           <div className="absolute top-[-50%] right-[-10%] w-[350px] h-[350px] rounded-full bg-brandBlue/10 blur-[80px]" />
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
             <div className="lg:col-span-7 text-left space-y-4">
-              <span className="text-xs font-bold uppercase tracking-wider text-brandBlue-light bg-brandBlue-dark/40 px-3 py-1 rounded border border-brandBlue/30">Upcoming Module</span>
-              <h3 className="text-2xl font-extrabold font-manrope text-white">Central GramSetu Analytics Dashboard</h3>
-              <p className="text-sm text-slate-400 leading-relaxed">
+              <span className="text-xs font-bold uppercase tracking-wider text-brandBlue-light bg-brandBlue-dark/50 px-3 py-1 rounded-md border border-brandBlue/40">Upcoming Module</span>
+              <h3 className="text-2xl sm:text-3xl font-extrabold font-heading text-white">Central GramSetu Analytics Dashboard</h3>
+              <p className="text-sm text-slate-300 leading-relaxed font-normal">
                 Empower district magistrates and panchayat leaders with live statistics on scheme requests, certificate print queues, health queries, and job registrations to allocate local budget resources efficiently.
               </p>
             </div>
-            <div className="lg:col-span-5 bg-slate-950/80 border border-slate-800/80 p-5 rounded-2xl space-y-4">
+            <div className="lg:col-span-5 bg-slate-950/80 border border-slate-800 p-5 rounded-2xl space-y-4 shadow-inner">
               {/* Simulated mini dashboard bars */}
               <div className="space-y-3 text-left">
                 <div>
-                  <div className="flex justify-between text-[10px] font-bold text-slate-400 mb-1">
+                  <div className="flex justify-between text-[10px] font-bold text-slate-300 mb-1">
                     <span>AGRICULTURAL QUERIES</span>
                     <span>74%</span>
                   </div>
@@ -141,7 +140,7 @@ export const FutureVision = () => {
                   </div>
                 </div>
                 <div>
-                  <div className="flex justify-between text-[10px] font-bold text-slate-400 mb-1">
+                  <div className="flex justify-between text-[10px] font-bold text-slate-300 mb-1">
                     <span>CITIZEN APPLICATIONS</span>
                     <span>89%</span>
                   </div>
@@ -150,7 +149,7 @@ export const FutureVision = () => {
                   </div>
                 </div>
                 <div>
-                  <div className="flex justify-between text-[10px] font-bold text-slate-400 mb-1">
+                  <div className="flex justify-between text-[10px] font-bold text-slate-300 mb-1">
                     <span>EMERGENCY DISPATCH RATE</span>
                     <span>99%</span>
                   </div>

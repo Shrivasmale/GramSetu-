@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { useTheme } from '../context/ThemeContext';
 import { HiMenu, HiX } from 'react-icons/hi';
@@ -45,10 +45,10 @@ export const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-350 ${
+    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
       isScrolled 
-        ? 'glass-navbar py-3 shadow-md' 
-        : 'bg-transparent py-5'
+        ? 'glass-navbar py-3 shadow-md border-b border-slate-200/80 dark:border-slate-800/80' 
+        : 'bg-white/70 dark:bg-slate-950/70 backdrop-blur-md py-4 border-b border-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -64,7 +64,7 @@ export const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-slate-650 dark:text-slate-300 hover:text-brandBlue dark:hover:text-brandBlue-light font-bold text-sm tracking-wide transition-colors duration-200"
+                className="text-slate-700 dark:text-slate-200 hover:text-brandBlue dark:hover:text-brandBlue-light font-bold text-sm tracking-wide transition-colors duration-200"
               >
                 {link.name}
               </a>
@@ -80,16 +80,16 @@ export const Navbar = () => {
                   setIsThemeDropdownOpen(!isThemeDropdownOpen);
                   setIsLangDropdownOpen(false);
                 }}
-                className="flex items-center justify-center p-2.5 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 transition-colors"
+                className="flex items-center justify-center p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-900 dark:text-slate-100 transition-colors border border-slate-300/80 dark:border-slate-700/80 shadow-xs"
                 aria-label="Change Theme"
               >
                 {theme === 'light' && <MdLightMode className="text-lg text-amber-500 animate-in spin duration-500" />}
                 {theme === 'dark' && <MdDarkMode className="text-lg text-blue-400" />}
-                {theme === 'system' && <MdComputer className="text-lg text-slate-500 dark:text-slate-400" />}
+                {theme === 'system' && <MdComputer className="text-lg text-slate-700 dark:text-slate-300" />}
               </button>
 
               {isThemeDropdownOpen && (
-                <div className="absolute right-0 mt-2 w-36 rounded-xl bg-white dark:bg-slate-800 shadow-xl ring-1 ring-black/5 dark:ring-white/10 py-1.5 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
+                <div className="absolute right-0 mt-2 w-36 rounded-xl bg-white dark:bg-slate-850 shadow-xl ring-1 ring-slate-200 dark:ring-slate-800 py-1.5 z-50 animate-in fade-in slide-in-from-top-2 duration-200 border border-slate-200/80 dark:border-slate-750">
                   {themes.map((tOpt) => (
                     <button
                       key={tOpt.code}
@@ -97,8 +97,8 @@ export const Navbar = () => {
                         changeTheme(tOpt.code);
                         setIsThemeDropdownOpen(false);
                       }}
-                      className={`w-full text-left px-4 py-2 text-xs font-bold hover:bg-slate-50 dark:hover:bg-slate-700 flex items-center space-x-2.5 transition-colors ${
-                        theme === tOpt.code ? 'text-brandBlue dark:text-brandBlue-light bg-blue-50/50 dark:bg-blue-900/10' : 'text-slate-700 dark:text-slate-200'
+                      className={`w-full text-left px-4 py-2 text-xs font-bold hover:bg-slate-100 dark:hover:bg-slate-750 flex items-center space-x-2.5 transition-colors ${
+                        theme === tOpt.code ? 'text-brandBlue dark:text-brandBlue-light bg-blue-50 dark:bg-blue-900/30 font-extrabold' : 'text-slate-900 dark:text-slate-200'
                       }`}
                     >
                       {tOpt.icon}
@@ -116,7 +116,7 @@ export const Navbar = () => {
                   setIsLangDropdownOpen(!isLangDropdownOpen);
                   setIsThemeDropdownOpen(false);
                 }}
-                className="flex items-center space-x-2 px-3 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-bold text-xs transition-colors duration-200"
+                className="flex items-center space-x-2 px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-900 dark:text-slate-100 font-extrabold text-xs transition-colors duration-200 border border-slate-300/80 dark:border-slate-700/80 shadow-xs"
                 aria-label="Select Language"
               >
                 <MdLanguage className="text-base text-brandBlue" />
@@ -124,7 +124,7 @@ export const Navbar = () => {
               </button>
 
               {isLangDropdownOpen && (
-                <div className="absolute right-0 mt-2 w-36 rounded-xl bg-white dark:bg-slate-800 shadow-xl ring-1 ring-black/5 dark:ring-white/10 py-1.5 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
+                <div className="absolute right-0 mt-2 w-36 rounded-xl bg-white dark:bg-slate-850 shadow-xl ring-1 ring-slate-200 dark:ring-slate-800 py-1.5 z-50 animate-in fade-in slide-in-from-top-2 duration-200 border border-slate-200/80 dark:border-slate-750">
                   {languages.map((lang) => (
                     <button
                       key={lang.code}
@@ -132,8 +132,8 @@ export const Navbar = () => {
                         changeLanguage(lang.code);
                         setIsLangDropdownOpen(false);
                       }}
-                      className={`w-full text-left px-4 py-2.5 text-xs font-bold hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors ${
-                        currentLang === lang.code ? 'text-brandBlue dark:text-brandBlue-light bg-blue-50/50 dark:bg-blue-900/10' : 'text-slate-700 dark:text-slate-200'
+                      className={`w-full text-left px-4 py-2.5 text-xs font-bold hover:bg-slate-100 dark:hover:bg-slate-750 transition-colors ${
+                        currentLang === lang.code ? 'text-brandBlue dark:text-brandBlue-light bg-blue-50 dark:bg-blue-900/30 font-extrabold' : 'text-slate-900 dark:text-slate-200'
                       }`}
                     >
                       {lang.label}
@@ -146,7 +146,7 @@ export const Navbar = () => {
             {/* Request Demo Button */}
             <a
               href="#contact"
-              className="px-5 py-2.5 rounded-xl bg-brandBlue hover:bg-brandBlue-dark text-white font-extrabold text-xs shadow-lg shadow-brandBlue/15 hover:shadow-brandBlue/30 hover:-translate-y-0.5 transition-all duration-200"
+              className="px-5 py-2.5 rounded-xl bg-brandBlue hover:bg-brandBlue-dark text-white font-extrabold text-xs shadow-md shadow-brandBlue/15 hover:shadow-brandBlue/30 hover:-translate-y-0.5 transition-all duration-200"
             >
               {t('nav.requestDemo')}
             </a>
@@ -161,25 +161,25 @@ export const Navbar = () => {
                 const nextTheme = themes[(index + 1) % themes.length].code;
                 changeTheme(nextTheme);
               }}
-              className="p-2.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200"
+              className="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-200/60 dark:border-slate-700/60"
               aria-label="Cycle Theme"
             >
               {theme === 'light' && <MdLightMode className="text-lg text-amber-500" />}
               {theme === 'dark' && <MdDarkMode className="text-lg text-blue-400" />}
-              {theme === 'system' && <MdComputer className="text-lg text-slate-500" />}
+              {theme === 'system' && <MdComputer className="text-lg text-slate-600 dark:text-slate-300" />}
             </button>
 
             {/* Quick Lang Switcher for Mobile */}
             <div className="relative">
               <button
                 onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
-                className="p-2.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200"
+                className="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-200/60 dark:border-slate-700/60"
                 aria-label="Select Language"
               >
                 <MdLanguage className="text-lg text-brandBlue" />
               </button>
               {isLangDropdownOpen && (
-                <div className="absolute right-0 mt-2 w-32 rounded-xl bg-white dark:bg-slate-800 shadow-xl ring-1 ring-black/5 dark:ring-white/10 py-1 z-50">
+                <div className="absolute right-0 mt-2 w-32 rounded-xl bg-white dark:bg-slate-850 shadow-xl ring-1 ring-slate-200 dark:ring-slate-800 py-1 z-50 border border-slate-200/80 dark:border-slate-750">
                   {languages.map((lang) => (
                     <button
                       key={lang.code}
@@ -187,8 +187,8 @@ export const Navbar = () => {
                         changeLanguage(lang.code);
                         setIsLangDropdownOpen(false);
                       }}
-                      className={`w-full text-left px-3 py-2 text-xs font-bold hover:bg-slate-100 dark:hover:bg-slate-700 ${
-                        currentLang === lang.code ? 'text-brandBlue dark:text-brandBlue-light' : 'text-slate-750 dark:text-slate-200'
+                      className={`w-full text-left px-3 py-2 text-xs font-bold hover:bg-slate-100 dark:hover:bg-slate-750 ${
+                        currentLang === lang.code ? 'text-brandBlue dark:text-brandBlue-light bg-blue-50 dark:bg-blue-900/30 font-extrabold' : 'text-slate-900 dark:text-slate-200'
                       }`}
                     >
                       {lang.label}
@@ -200,7 +200,7 @@ export const Navbar = () => {
 
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2.5 rounded-lg text-slate-650 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white bg-slate-100 dark:bg-slate-800"
+              className="p-2.5 rounded-xl text-slate-800 dark:text-slate-200 hover:text-brandBlue dark:hover:text-brandBlue-light bg-slate-100 dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700/60"
               aria-label="Toggle Mobile Menu"
             >
               {isMobileMenuOpen ? <HiX className="text-lg" /> : <HiMenu className="text-lg" />}
@@ -212,20 +212,20 @@ export const Navbar = () => {
       {/* Mobile Drawer Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden fixed inset-0 top-[72px] bg-slate-950/40 backdrop-blur-sm z-40 transition-opacity">
-          <div className="bg-white dark:bg-slate-900 py-6 px-4 space-y-4 shadow-xl border-t border-slate-100 dark:border-slate-850 flex flex-col justify-between max-h-[80vh] overflow-y-auto">
+          <div className="bg-white dark:bg-slate-900 py-6 px-4 space-y-4 shadow-xl border-t border-slate-200 dark:border-slate-800 flex flex-col justify-between max-h-[80vh] overflow-y-auto">
             <div className="flex flex-col space-y-2">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="px-4 py-3 rounded-xl text-slate-750 dark:text-slate-200 font-bold text-sm hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-brandBlue dark:hover:text-brandBlue-light transition-all"
+                  className="px-4 py-3 rounded-xl text-slate-800 dark:text-slate-200 font-bold text-sm hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-brandBlue dark:hover:text-brandBlue-light transition-all"
                 >
                   {link.name}
                 </a>
               ))}
             </div>
-            <div className="pt-4 border-t border-slate-150 dark:border-slate-800 flex flex-col space-y-3 px-4">
+            <div className="pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-col space-y-3 px-4">
               <a
                 href="#contact"
                 onClick={() => setIsMobileMenuOpen(false)}
